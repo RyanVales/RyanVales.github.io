@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+	background: linear-gradient(-45deg, #000000,#252525, #000000, #4e4e4e);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    overflow:hidden;
+    padding-bottom:auto;
+    transition:0.6s;
+    margin:0px;
+    font-family: 'Roboto';
+    color:white;
+    text-align: center;
+
+    }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes LoadSlide{
+    0%{transform:translateY(800%);opacity: 0;}
+        100%{transform:translateY(100%);opacity:1
+    }}
+input {
+    text-align: right;
+}
+#MainBox{
+    transform: translateY(100%);
+    animation:LoadSlide 2s forwards;
+}
+#header{
+    font-size: 5vh;
+    margin-bottom: 3%;
+    
+}
+a{color:white;}
+button{
+    background-color: transparent;
+    border-radius: 10px;
+    color:white;
+    border-color:white;
+    transition: 0.6s;
+}
+button:hover{
+    transform: scale(1.1);
+    
+}
+    </style>
+    <body>
+    <div id="MainBox">
+        <div id="header">Income Tax Calculator</div>
+      
+
+        <br>
+        <label for userIn>Input Income</label>
+        <input id="userIn" type="number">
+ 
+        </select>
+        <br><br>
+        <label for="Output">Taxable Income :</label>
+        <input id="Output" type="text" readonly>
+        <button id="Enter" onclick ="convert()">Enter</button>
+        <br><br><br><a href="index.html">Back to Index</a><br><br>
+    </div>
+    </body>
+    <script>
+        function convert(){
+            let output = document.getElementById('Output')
+            let y = 0
+            let userInput = document.getElementById('userIn').value
+            if (userInput>=8000000){
+                userInput= 2410000 +(userInput-8000000)*0.35
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else if (userInput>=2000000){
+                userInput= 490000 +(userInput-2000000)*0.32
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else if (userInput>=800000){
+                userInput= 130000 +(userInput-800000)*0.3
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else if (userInput>=400000){
+                userInput= 30000 +(userInput-400000)*0.25
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else if (userInput>=250000){
+                userInput= (userInput-250000)*0.20
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else
+            {
+                userInput= 0
+                output.value='₱'+userInput.toFixed(2)
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Bebas+Neue&family=Hedvig+Letters+Sans&family=Manrope:wght@200&family=Montserrat:ital,wght@0,400;0,900;1,900&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+	background: linear-gradient(-45deg, #080808,#1b1b1b, #080808, #161616);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    overflow:hidden;
+    padding-bottom:auto;
+    transition:0.6s;
+    margin:0px;
+    font-family: 'Roboto';
+    }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+    
+}
+@keyframes glowAnim{
+    0%{box-shadow: 0px 0px 0px white;}
+    50%{box-shadow: 0px 0px 20px white;}
+    100%{box-shadow: 0px 0px 0px white;}
+}
+@keyframes Load{
+    0%{transform:translateY(-100%);}
+}
+@keyframes LoadSlide{
+    0%{transform:translateY(200%);}
+        100%{transform:translateY(0%);
+    }
+}
+h1,h2{
+    margin:0
+}
+#toperbar{
+    animation:Load 2s forwards;
+}
+    #topbar{
+        height:16vh;
+        background-color: rgba(0, 0, 0, 0.466);
+        box-shadow: 0px 0px 20px white;
+        animation:glowAnim 3s infinite;
+        color:white;
+        font-size: 8vh;
+        padding-left: 3%;
+        
+    }
+    #subheader{
+        font-size:5vh;
+    }
+    .Slides{
+        background-color: white;
+        width:16%;
+        height:60vh;
+        display:inline-block;
+        margin-top:5%;
+        margin-left:7.5%;
+        transform:translateY(200%);
+        animation:LoadSlide 2s forwards;
+        transition:0.6s;
+        background-color: #080808;
+        box-shadow: 0px 0px 20px white;
+        color:white;
+        text-align: center;
+        border-radius: 25px;
+        
+    }
+    .Slides:hover{
+        transform:scale(1.05);
+        box-shadow: 0px 0px 20px rgb(90, 253, 75);
+    }
+    #convert{
+        animation-delay: 1s;
+    }
+    #income{
+        animation-delay: 1.5s;
+    }
+    #Ncalc{
+        animation-delay: 2s;
+    }
+    #Payroll{
+        animation-delay: 2.5s;
+    }
+
+    </style>
+    <body onbeforeunload="transitionFunc()">
+        <div id="MainDiv">
+        <div id="toperbar">
+        <div id="topbar">
+        Justin Ryan Vales
+        ITC Finals <br> <div id="subheader">Website Project</div> 
+        </div>
+        </div>
+   
+        <a href="conversion.html">
+            <div class="Slides" id="convert">
+               Conversion Calculator
+            </div>
+        </a>
+        <a href="incometax.html">
+            <div class="Slides" id="income">
+                Income Tax Calculator
+            </div>
+        </a>
+        <a href="NCalculator.html">
+            <div class="Slides" id="Ncalc">
+                NCalculator
+            </div>
+        </a>
+        <a href="payroll.html">
+            <div class="Slides" id="Payroll">
+                Payroll
+            </div>
+        </a>
+            
+        </div>
+        
+    </body>
+<script>
+    function transitionFunc(){
+        document.body.style.opacity="0"
+    }
+</script>
+</html>
